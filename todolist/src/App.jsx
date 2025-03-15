@@ -1,7 +1,8 @@
 import { useState } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import AddAcc from "./components/addtodo.jsx";
+import AddAcc from "./components/signup.jsx";
+import { auth, signInWithGoogle } from "./firebase";
 
 function Home() {
   return (
@@ -10,10 +11,10 @@ function Home() {
         <p id="title">BOB TO/DO/LIST</p>
       </div>
       <div className={"options" + " " + "bodygrid"}>
-        <Link to="login">
+        <Link to="/login">
           <button className="logsign">Log In</button>
         </Link>
-        <Link to="signup">
+        <Link to="/signup">
           <button className="logsign">Sign Up</button>
         </Link>
       </div>
@@ -27,11 +28,9 @@ function Login() {
       <p>
         <Link to="/">{`<<< BACK`}</Link>
       </p>
-
       <div className="title">
         <p>LOG IN</p>
       </div>
-
       <div className={"bodygrid2"}>
         <div className="lgsu">
           <div className="fields">
@@ -52,14 +51,20 @@ function Login() {
               placeholder="enter your password"
             />
           </div>
-          <input type="submit" value="Submit" className="submit" />
+          <button type="submit" className="submit">
+            Submit
+          </button>
           <p className="here">
             Don't have an account yet? Click{" "}
-            <Link to="signup">
-              <u>here</u>
-            </Link>
+            <Link to="/signup">{<u>here</u>}</Link>
             to Sign Up!
           </p>
+          <button
+            className="login__btn login__google"
+            onClick={signInWithGoogle}
+          >
+            Login with Google
+          </button>
         </div>
       </div>
     </>
@@ -79,33 +84,6 @@ function Signup() {
 
       <div className={"bodygrid2"}>
         <div className="lgsu">
-          {/* <div className="fields">
-            <label for="username">Username</label>
-            <input
-              type="text"
-              id="username"
-              name="username"
-              placeholder="johnDoe67"
-            />
-          </div>
-          <div className="fields">
-            <label for="email">Email</label>
-            <input
-              type="text"
-              id="email"
-              name="email"
-              placeholder="example@gmail.com"
-            />
-          </div>
-          <div className="fields">
-            <label for="password">Password</label>
-            <input
-              type="text"
-              id="password"
-              name="password"
-              placeholder="enter your password"
-            />
-          </div> */}
           <AddAcc />
         </div>
       </div>

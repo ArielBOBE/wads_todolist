@@ -57,7 +57,6 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
   background-color: RGB(40,40,40);
   color: RGB(230,230,230);
   font-size: 20px;
@@ -69,10 +68,12 @@
 .here {
   margin:0px;
   margin-bottom: 20px;
+  font-size: 15px;
 }
 
 .submit {
   margin-top: 20px;
+  width: 100%;
 }
 
 .fields {
@@ -97,4 +98,17 @@ button:hover {
 
 .submit:hover {
   cursor: pointer;
+}
+
+.login__btn {
+  padding: 10px;
+  font-size: 18px;
+  margin-bottom: 10px;
+  border: none;
+  color: white;
+  background-color: black;
+}
+.login__google {
+  background-color: #4285f4;
+  margin-top: 10px;
 }

@@ -1,0 +1,2 @@
+controllers directory will contain files which hold functions (callbacks) to be used in the routes files.
+all are async.

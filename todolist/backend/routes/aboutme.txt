@@ -1,0 +1,1 @@
+Routes folder will commpile all endpoints whose callbacks will be available in controllers folder

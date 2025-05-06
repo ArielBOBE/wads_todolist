@@ -1,0 +1,1 @@
+This folder contain middleware callback functions that does not typically end in a response but rather just be used for processing, validation/auths is one example.
